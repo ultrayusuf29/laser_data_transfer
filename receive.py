@@ -1,7 +1,7 @@
 import serial
 import time
 
-port = serial.Serial("/dev/ttyAMA0", baudrate=9600, timeout=1.0)
+port = serial.Serial("/dev/serial0", baudrate=9600, timeout=1.0)
 
 while True:
 	data = port.readline()
