@@ -15,7 +15,6 @@ ser.flushInput()
 
 for i,c in enumerate(SMS):
 	print("gonder:" + SMS[0:i])
-
-ser.write((SMS[0:i]+"\n"))
-time.sleep(0.1)
+	ser.write((SMS[0:i]+"\n"))
+	time.sleep(0.1)
 ser.close()
