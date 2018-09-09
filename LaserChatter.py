@@ -13,7 +13,7 @@ def send_message():
         a=input("Mesajınızı girin:")
         if a=='':
             ser.write(a+"\n")
-            print(a,' (Gönderildi)'))
+            print(a,' (Gönderildi)')
             
 def receive_message():
     while 1:
