@@ -1,7 +1,7 @@
 import serial
 from threading import Thread
 
-ser=serial.Serial("/dev/pts/3",baudrate=9600,timeout=1.0)
+ser=serial.Serial("/dev/serial0",baudrate=9600,timeout=1.0)
 if (ser.isOpen()==False):
     ser.Open()
     print("Port acildi.")
