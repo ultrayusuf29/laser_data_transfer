@@ -1,5 +1,5 @@
 from serial import Serial
-ser = Serial("/dev/pts/4") #or whatever 
+ser = Serial("/dev/serial0") #or whatever 
 ser.write("<<SENDFILE>>\n") #tell server we are ready to recieve
 readline = lambda : iter(lambda:ser.read(1),"\n")
 with open("b.jpg","wb") as outfile:
