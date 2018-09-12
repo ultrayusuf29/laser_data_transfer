@@ -22,5 +22,10 @@ if __name__=='__main__':
     r=Thread(target=receive_message)
     r.start()
     while 1:
-        send_message(raw_input("Mesajinizi girin:"))
+        a=raw_input("Mesajinizi girin:")
+        if a=="q":
+            r.stop()
+            print("Kapatabilirsin")
+        else:
+            send_message(a)
 
