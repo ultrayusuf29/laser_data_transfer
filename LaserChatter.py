@@ -2,8 +2,11 @@ import serial
 from threading import Thread
 import tkinter
 import os
-
-ser=serial.Serial("/dev/pts/3",baudrate=9600,timeout=1.0)
+import picamera
+a=picamera.PiCamera()
+a.resolution=(640,480)
+a.start_preview()
+ser=serial.Serial("/dev/serial0",baudrate=9600,timeout=1.0)
 if (ser.isOpen()==False):
     ser.Open()
     print("Port acildi.")
@@ -13,6 +16,7 @@ ser.flushInput()
 readline = lambda : iter(lambda:ser.read(1),"\n")
 
 def send_foto():
+	a.capture("a.jpg")
         ser.write("<<SENDFILE>>\n")
         ser.write(open("a.jpg","rb").read())
         ser.write("\n<<EOF>>\n")
@@ -33,7 +37,7 @@ def receive_message():
                     if line == "<<EOF>>":
                         break
                     print >> outfile,line
-		os.system("viewnior b.jpg")
+		os.system("pcmanfm b.jpg")
         else:
             if data:
                 msg_list.insert(tkinter.END,data)
