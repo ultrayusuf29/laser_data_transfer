@@ -10,3 +10,4 @@ Kodu "ROOT" olarak python2 ile aç.
 https://www.apk4fun.com/apk/88458/
 Bu linkten qpythonu indir ve qpython server'i bu apk ile aç.
 
+Bu arada çıkan MessageBox'lara OK basman kodun devam etmesi açısından önemli.
