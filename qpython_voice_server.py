@@ -23,7 +23,7 @@ while 1:
     print("Server received:"+data)
     droid.recorderStartMicrophone("/sdcard/a.wav")
     print("Kayit Basladi")
-    time.sleep(10)
+    time.sleep(30)
     droid.recorderStop()
     print("Kayit Bitti")
     conn.send("YSF")
