@@ -7,10 +7,10 @@ import time
 import tkMessageBox
 
 s=socket.socket()
-host="192.168.43.1"
+host="192.168.43.1"#Bizahmet qpython server ip'ini girmeyi unutma
 port=50000
 
-ser=serial.Serial("/dev/pts/2",baudrate=9600,timeout=1.0)
+ser=serial.Serial("/dev/serial0",baudrate=9600,timeout=1.0)
 if (ser.isOpen()==False):
     ser.Open()
     print("Port acildi.")
