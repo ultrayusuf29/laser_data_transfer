@@ -5,6 +5,11 @@ import os
 import socket
 import time
 import tkMessageBox
+import picamera
+
+a=picamera.PiCamera()
+a.resolution=(640,480)
+a.start_preview()
 
 s=socket.socket()
 host="192.168.43.1"#Bizahmet qpython server ip'ini girmeyi unutma
@@ -47,6 +52,7 @@ def send_voice():
     tkMessageBox.showinfo("UYARI","Ses Transferi Tamamlandi.Devam etmek icin OK'a basin.")
     
 def send_foto():
+        a.capture("a.jpg")
         ser.write("<<SENDFILE>>\n")
         ser.write(open("a.jpg","rb").read())
         ser.write("\n<<EOF>>\n")
