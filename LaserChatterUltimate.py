@@ -25,7 +25,7 @@ ser.flushInput()
 readline = lambda : iter(lambda:ser.read(1),"\n")
 
 def play_wav():
-    os.system("audacious b.wav")
+    os.system("omxplayer b.wav")
     
 def get_voice_server():
     s.connect((host,port))
@@ -74,7 +74,7 @@ def receive_message():
                         break
                     print >> outfile,line
             tkMessageBox.showinfo("UYARI","Fotograf Alindi.Acmak icin OK'a basin.")
-            os.system("viewnior b.jpg")
+            os.system("pcmanfm b.jpg")
         if data=="<<VOICE>>":
             with open("b.wav","wb") as outfile:
                 while True:
